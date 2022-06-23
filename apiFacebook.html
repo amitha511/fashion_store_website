@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.fbAsyncInit = function() {
+            // FB JavaScript SDK configuration and setup
+            FB.init({
+              appId      : '394563579374209', // FB App ID
+              cookie     : true,  // enable cookies to allow the server to access the session
+              xfbml      : true,  // parse social plugins on this page
+              version    : 'v14.0' // use graph api version 2.8
+            });
+            
+            var body = "Test1 API massage !!!!! ";
+            FB.api(
+                '/103914885705757/feed',
+                'POST',
+                {"message":body},
+                function(response) {
+                if (!response || response.error) {
+                    alert('Error occured');
+                } else {
+                    alert('Post ID: ' + response.id);
+                }
+	        });
+        }
+      
+    </script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+  
+</body>
+</html>
