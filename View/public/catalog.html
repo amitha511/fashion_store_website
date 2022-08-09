@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://kit.fontawesome.com/bb84af38dc.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Clothes Website</title>
+    <link rel="stylesheet" href="style/main.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+</head>
+
+<body>
+    <script src="scripts\main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- <script type="text/javascript">
+        ShowCatalog();
+        function ShowCatalog() {
+            $.get("catalogarr", function (data, status) {
+                $("#company").empty();
+                $("#price").empty();
+                for (let i = 0; i < data.length; i++) {
+                    $("#company").append(`<p id="proname"><b><Company:</b></font> ${data[i].company}</p> <p><b>Price:</b>${data[i].price}$</p>
+                                <p><b>Color: </b>${data[i].color}</p>
+                                <p><b>Size: </b>${data[i].size}</p>
+                                <p><b>Gender: </b>${data[i].gender}</p>
+                                <p><b>Category: </b>${data[i].category}</p>`);
+                    document.getElementById("price").innerHTML += `<p><img id="image_` + i + `" class="pic"/></p><br><br><br>`;
+                    $("#image" + "_" + i).attr("src", data[i].imageUrl);
+                    $("#image" + "_" + i).attr("width", "300px");
+                    $("#image" + "_" + i).attr("height", "190px");
+                    $("#company").append(`<br>`);
+                }
+
+            });
+            console.log("load page");
+        }
+
+    </script> -->
+
+    <section class="container">
+        <h1>Our Catalog</h1>
+        <p>
+            <label for="gender">Gedner</label>
+            <select name="gender" id="gender">
+                <option value="all">all</option>
+                <option value="male">male</option>
+                <option value="female">female</option>
+
+            </select>
+            <label for="size">Size</label>
+            <select name="size" id="size">
+                <option value="all">all</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select>
+
+            <label for="category">Category</label>
+            <select name="category" id="category">
+                <option value="all">all</option>
+                <option value="t-shirt">t-shirt</option>
+                <option value="plaid">plaid</option>
+            </select>
+            <button type="button1" id="myButton1">Search</button>
+            <br>
+            <label for="company1">Company</label>
+            <select name="company1" id="company1">
+                <option value="all">all</option>
+                <option value="Nike">Nike</option>
+                <option value="Balenciaga">Balenciaga</option>
+                <option value="Kenzo">Kenzo</option>
+                <option value="Supreme">Supreme</option>
+                <option value="Vlone">Vlone</option>
+                <option value="Play">Play</option>
+                <option value="Burberry">Burberry</option>
+                <option value="Fendi">Fendi</option>
+                <option value="Gucci">Gucci</option>
+                <option value="Amiri">Amiri</option>
+
+            </select>
+
+            <label for="maxprice">MaxPrice</label>
+            <select name="maxprice" id="maxprice">
+                <option value="all">all</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="250">250</option>
+                <option value="500">500</option>
+                <option value="1000">1000</option>
+
+            </select>
+            <label for="color">Color</label>
+            <select name="color" id="color">
+                <option value="all">all</option>
+                <option value="colorful">colorful</option>
+                <option value="black">black</option>
+                <option value="white">white</option>
+                <option value="green">green</option>
+                <option value="yellow">yellow</option>
+                <option value="navy">navy</option>
+                <option value="pink">pink</option>
+            </select>
+
+            <button type="button1" id="myButton2">Search</button>
+        </p>
+    </section>
+    <!-- </div> -->
+
+    <script>
+        document.getElementById("myButton1").addEventListener('click', function () {
+            ShowCatalog1();
+        });
+    </script>
+    <script>
+
+        function ShowCatalog1() {
+            $.get("catalogarr", function (data, status) {
+                $("#company").empty();
+                $("#price").empty();
+                let count = 0;
+                let UserGender = document.getElementById("gender").value;
+                let UserSize = document.getElementById("size").value;
+                let UserCategory = document.getElementById("category").value;
+                for (let i = 0; i < data.length; i++) {
+                    if ((UserSize == data[i].size || UserSize == "all") && (UserGender == data[i].gender || UserGender == "all") && (UserCategory == data[i].category || UserCategory == "all")) {
+                        $("#company").append(`<p id="proname"><b><Company:</b></font> ${data[i].company}</p> <p><b>Price:</b>${data[i].price}$</p>
+                                <p><b>Color: </b>${data[i].color}</p>
+                                <p><b>Size: </b>${data[i].size}</p>
+                                <p><b>Gender: </b>${data[i].gender}</p>
+                                <p><b>Category: </b>${data[i].category}</p>`);
+                        document.getElementById("price").innerHTML += `<p><img id="image_` + i + `" class="pic"/></p><br><br><br>`;
+                        $("#image" + "_" + i).attr("src", data[i].imageUrl);
+                        $("#image" + "_" + i).attr("width", "300px");
+                        $("#image" + "_" + i).attr("height", "195px");
+                        count++;
+                    }
+                }
+                if (count == 0) {
+                    $("#company").append("Sorry! There are 0 results to your search. Please try again!");
+                }
+
+            });
+
+        }
+
+    </script>
+    <script>
+        document.getElementById("myButton2").addEventListener('click', function () {
+            ShowCatalog2();
+        });
+    </script>
+    <script>
+
+        function ShowCatalog2() {
+            $.get("catalogarr", function (data, status) {
+                $("#company").empty();
+                $("#price").empty();
+                let count = 0;
+                let UserCompany = document.getElementById("company1").value;
+                let UserPrice = document.getElementById("maxprice").value;
+                let UserColor = document.getElementById("color").value;
+                for (let i = 0; i < data.length; i++) {
+                    if ((UserPrice >= data[i].price || UserPrice == "all") && (UserCompany == data[i].company || UserCompany == "all") && (UserColor == data[i].color || UserColor == "all")) {
+                        $("#company").append(`<p id="proname"><b><Company:</b></font> ${data[i].company}</p> <p><b>Price:</b>${data[i].price}$</p>
+                                <p><b>Color: </b>${data[i].color}</p>
+                                <p><b>Size: </b>${data[i].size}</p>
+                                <p><b>Gender: </b>${data[i].gender}</p>
+                                <p><b>Category: </b>${data[i].category}</p>`);
+                        document.getElementById("price").innerHTML += `<p><img id="image_` + i + `" class="pic"/></p><br><br><br>`;
+                        $("#image" + "_" + i).attr("src", data[i].imageUrl);
+                        $("#image" + "_" + i).attr("width", "300px");
+                        $("#image" + "_" + i).attr("height", "195px");
+                        count++;
+                    }
+                }
+                if (count == 0) {
+                    $("#company").append("Sorry! There are 0 results to your search. Please try again!");
+                }
+
+            });
+
+        }
+
+    </script>
+
+
+
+
+    <!-- <section id="product1" class="section-p1">
+        <h2>Featured Products</h2>
+        <div class="product-list">
+            <div class="pro">
+                <img src="images/oversize.jpeg" alt="">
+                <div class="p-details">
+                    <span>Elegant</span>
+                    <h5>T-Shirt</h5>
+                    <h4>$100</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping add-cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="images/oversize.jpeg" alt="">
+                <div class="p-details">
+                    <span>Elegant</span>
+                    <h5>Oversize</h5>
+                    <h4>$100</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping add-cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="images/oversize.jpeg" alt="">
+                <div class="p-details">
+                    <span>Elegant</span>
+                    <h5>Short</h5>
+                    <h4>$100</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping add-cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="images/oversize.jpeg" alt="">
+                <div class="p-details">
+                    <span>Elegant</span>
+                    <h5>T-Shirt</h5>
+                    <h4>$100</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping add-cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="images/oversize.jpeg" alt="">
+                <div class="p-details">
+                    <span>Elegant</span>
+                    <h5>T-Shirt</h5>
+                    <h4>$100</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping add-cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="images/oversize.jpeg" alt="">
+                <div class="p-details">
+                    <span>Elegant</span>
+                    <h5>T-Shirt</h5>
+                    <h4>$100</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping add-cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="images/oversize.jpeg" alt="">
+                <div class="p-details">
+                    <span>Elegant</span>
+                    <h5>T-Shirt</h5>
+                    <h4>$100</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping add-cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="images/oversize.jpeg" alt="">
+                <div class="p-details">
+                    <span>Elegant</span>
+                    <h5>T-Shirt</h5>
+                    <h4>$100</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping add-cart"></i></a>
+            </div>
+        </div>
+
+    </section> -->
+    <section class="pro-container">
+        <div id="company"></div>
+        <div id="price"></div>
+    </section>
+
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>We are happy to share our dreams with you!</p>
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+        </div>
+        <p>Made by&nbsp <i class=" fa fa-users "></i> &nbspIdan, Ray, Maya, Amit</p>
+    </section>
+
+</body>
+
+</html>

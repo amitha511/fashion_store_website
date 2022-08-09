@@ -15,7 +15,7 @@
     <script>
         document.getElementById("share-button").addEventListener('click', function() {
         let xhr = new XMLHttpRequest();
-        var message = "hi ray"
+        var message = "hi dekel."
         var accessToken = "EAAFm2n39aoEBANZAvgJEM8tZAZCagWkkZAZCj8dqWD549JUKfXkmBgBYoZAZC2P93xYTENEDChEZCNiCRmWuKGZAoNaooXpT7YaZAOZAGs3rwcTL0FuGiCc0LdxMrrTTbhDjsca8iUZBgszXgi3tRvL1neBNWjmLHdaVoLR354QZCr092lyVKxjohrSCaR5EnC7dbMlQZD"
         var createPostRequest = "https://graph.facebook.com/v14.0/103914885705757/feed?message=" + encodeURIComponent(message) + "&access_token=" + accessToken
         xhr.open("POST", createPostRequest);
@@ -25,3 +25,4 @@
     </script>
 
 </body>
+</html>
