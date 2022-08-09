@@ -1,4 +1,8 @@
-
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Maven Pro', sans-serif;
+}
 
 #bd {
     background-image: url(../images/background.jpg);
@@ -267,7 +271,7 @@ h3 {
     opacity: 1;
 }
 
-/* .three {
+ .three {
     width: 80%;
     margin: auto;
     text-align: center;
@@ -275,25 +279,27 @@ h3 {
 }
 
 .three iframe {
-    width: 100%;
-    padding-left: 400px;
-}    check if there is another way to locate this in the mid on website */
+    width: 500px;
+    height: 400px;
+    padding-left: 350px;
+}  
 
-
-/* .three-col {
+/*
+.three-col {
     flex-basis: 35%;
     border-radius: 10px;
     margin-bottom: 5%;
     text-align: left;
 }
 
+/*
 .three-col img {
     width: 100%;
     border-radius: 10px;
     padding-left: 400px;
-}    check if there is another way to locate this in the mid on website */
+}    check if there is another way to locate this in the mid on website 
 
-/* .three-col p {
+ .three-col p {
     padding: 0;
 }
 
@@ -301,11 +307,12 @@ h3 {
     margin-top: 16px;
     margin-bottom: 15px;
     text-align: left;
-} */
+} 
+*/
 
 #map {
-    height: 400px;
-    width: 50%;
+    height: 90px;
+    width: 50px;
     display: block;
     margin-left: auto;
     margin-right: auto;

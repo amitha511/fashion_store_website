@@ -6,3 +6,9 @@ View/public/package.json
 Controller/package-lock.json
 Controller/package.json
 View/public/images/*
+View/public/scripts/node_modules/*
+View/public/scripts/package-lock.json
+View/public/scripts/package.json
+Model/package-lock.json
+Model/package.json
+

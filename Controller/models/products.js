@@ -1,5 +1,5 @@
-const mongoose1 = require('mongoose');
-const productSchema = mongoose1.Schema({
+const mongoose = require('mongoose');
+const productSchema = mongoose.Schema({
     company: {
         type: String
     },
@@ -23,5 +23,5 @@ const productSchema = mongoose1.Schema({
         type: String
     }
 });
-const Product = mongoose1.model('Product', productSchema);
+const Product = mongoose.model('Product', productSchema);
 module.exports = Product;
