@@ -1,0 +1,43 @@
+<html>
+<head>
+
+</head>
+<body>
+	<h1>This is the best chat :)</h1>
+	<br>
+	<br>
+
+	User Name: <input type="text" name="uname"/><br/>
+	Message: <input type="text" name="mes"/><br/>
+	<button id="send">Chat!</button>
+	<br><br><br>
+
+	<h2>Messages:</h2>
+	<div id="chat"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript">
+	updateChat();
+
+	function updateChat() {
+		setInterval(function() {
+			loadChat();
+		}, 1000);
+	}
+
+	function loadChat() {
+		$.get("chat", function(data, status){
+			$("#chat").empty();
+			$.each(data, function(key, value){
+				$("#chat").append('<p>' + value.usename + ': ' +value.message + '</p>');	
+			});
+		});
+	}
+
+	$("#send").click(function() {
+		$.get("message?uname=" + $('[name="uname"]').val() + "&mes=" + $('[name="mes"').val()  , function(data, status){
+		});
+	});
+</script>
+</body>
+
+</html>
