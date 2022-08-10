@@ -17,12 +17,41 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/mains.js"></script>
 
+    <nav class="navbar">
+        <div class="navbar_container">
+            <h1 id="navbar_logo">Name</h1>
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <button type="button" class="button" onclick="ShowHomePage()">Home</button>
+                </li>
+                <li class="navbar_item">
+                    <button type="button" class="button" onclick="ShowChatPage()">Chat</button>
+                </li>
+                <li class="navbar_item">
+                    <button type="button" class="button" onclick="ShowSearchPage()">Search</button>
+                </li>
+                <li class="navbar_item">
+                    <button type="button" class="button" onclick="ShowCatalogPage()">Catalog</button>
+                </li>
+                <li class="navbar_item">
+                    <button type="button" class="button" onclick="ShowLogInPage()">Log In</button>
+                </li>
+                <li class="navbar_item">
+                    <button type="button" class="button" onclick="ShowSingnupPage()">Sign up</button>
+                </li>
+                <li class="navbar_item">
+                    <button type="button1" id="myButton1" class="fa-solid fa-cart-shopping button" onclick="ShowCartPage()"></button>
+                </li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
 
+    </nav>
 
     <!-- <div id="buttons"> -->
 
     <section class="header">
-        <nav>
+        <!-- <nav>
             <a href="index.html"><img src=""></a>
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-times" onclick="hideMenu()"></i>
@@ -39,7 +68,7 @@
                 </ul>
             </div>
             <i class="fa fa-bars" onclick="showMenu()"></i>
-        </nav>
+        </nav> -->
 
         <section class="pro-container">
             <div id="com"></div>
