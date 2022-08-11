@@ -271,7 +271,7 @@ h3 {
     opacity: 1;
 }
 
- .three {
+.three {
     width: 80%;
     margin: auto;
     text-align: center;
@@ -282,7 +282,7 @@ h3 {
     width: 500px;
     height: 400px;
     padding-left: 350px;
-}  
+}
 
 /*
 .three-col {
@@ -463,6 +463,11 @@ footer h4 {
     justify-content: space-between;
     flex-wrap: wrap;
     text-align: left;
+}
+
+.pic1 {
+
+    margin-left: -25%;
 }
 
 .pic {
@@ -658,9 +663,7 @@ footer h4 {
     cursor: pointer;
 }
 
-
-
-/* menu style: */
+/* ------------------------------------menu style: ------------------------------------*/
 
 .navbar{
     background:linear-gradient(to top,#ffffff 70%, #e1e1e1 100%);;
@@ -739,4 +742,69 @@ footer h4 {
     border: 2px solid #a4a4a4; 
 
 }
- /* done menu style */
+ /* ------------------------------------done menu style ------------------------------------*/
+
+
+/* ------------------------------------chat style -----------------------------------------*/
+
+.bodybox {
+    margin:auto;
+    max-width: 550px;
+
+    background-position:left top;
+    font: 15px arial, sans-serif;
+    /* background-color: white; */
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    margin-left: 620px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    padding-right: 50px;
+    padding-left: 50px;
+    box-shadow: 5px 5px 5px grey;
+    border-radius: 15px;
+  }
+  
+.chatborder {
+    border-style: solid;
+    background-image:url('chat.jpeg');
+    background-color: #faf7f1;
+    border-width: 3px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 500px;
+    padding-left: 15px;
+    border-radius: 10px;
+    border-color: #d3c1c1;
+  }
+
+  .message1{
+    border-width:10px ;
+    background-color: #caf4c0;
+    border-width: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 150px;
+    padding-left: 15px;
+    border-radius: 20px;
+  }
+  
+  .chatbox {
+    font: 17px arial, sans-serif;
+    height: 22px;
+    width: 200px;
+  }
+
+  /* ------------------------------------done chat style -----------------------------------------*/
+
+ 
