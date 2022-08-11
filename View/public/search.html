@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <form action = "search.php" method= "post">
-        <div class= "buttons">
-            <button><label>חיפוש</label></button>
-            <input type="search" name ="search" placeholder="Enter search">          
-        </div></form>
+    <script type="text/javascript" src="scripts/mains.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <div id="exchange" class="one-col"></div>
+    <div class="buttons">
+        <button onclick="GroupByCompany()"><label>GroupBy Company</label></button>
+        <button onclick="GroupBySize()"><label>Group By Size</label></button>
+        <button onclick="GroupByCategory()"><label>Group By Category</label></button>
+    </div>
 </body>
+
 </html>

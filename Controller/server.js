@@ -30,20 +30,32 @@ server.get('/add', (req, res) => {
     res.send("hello");
 });
 
-
-
-server.get("/message", function(request, response){
-	msgs.push({ usename : request.query.uname, message:  request.query.mes});
-	response.json(msgs);
+server.get("/message", function (request, response) {
+    msgs.push({ usename: request.query.uname, message: request.query.mes });
+    response.json(msgs);
 });
 
-server.get("/chat", function(request, response){
-	response.json(msgs);
+server.get("/chat", function (request, response) {
+    response.json(msgs);
 });
 
-
-// server.get("/chat", function(request, response){
-//     response.sendfile(public + "/chat.html");
-// });
+server.get('/groupbycompany', async (req, res) => {
+    const group = await Product.aggregate([
+        { "$group": { _id: "$company", count: { $sum: 1 } } }
+    ]).sort({ count: -1 });
+    res.json(group);
+});
+server.get('/groupbysize', async (req, res) => {
+    const group = await Product.aggregate([
+        { "$group": { _id: "$size", count: { $sum: 1 } } }
+    ]).sort({ count: -1 });
+    res.json(group);
+});
+server.get('/groupbycategory', async (req, res) => {
+    const group = await Product.aggregate([
+        { "$group": { _id: "$category", count: { $sum: 1 } } }
+    ]).sort({ count: -1 });
+    res.json(group);
+});
 
 server.listen(8080);

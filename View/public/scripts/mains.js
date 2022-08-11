@@ -4,6 +4,7 @@ function preLoad() {
         $("#com").empty();
         $("#company").empty();
         $("#price").empty();
+        $("#loadDiv").empty();
     });
 }
 
@@ -28,6 +29,7 @@ function ShowChatPage() {
 function ShowSearchPage() {
     $(document).ready(function () {
         preLoad();
+        $("#exchange").empty();
         $("#com").load("search.html");
         console.log("load search page");
     });
@@ -37,6 +39,7 @@ function ShowCatalogPage() {
     $(document).ready(function () {
         preLoad();
         $("#com").load("catalog.html");
+        count = 1;
         console.log("load catalog page");
     });
 }
@@ -49,11 +52,19 @@ function ShowLogInPage() {
 
     });
 }
+function ShowAdminPage() {
+    $(document).ready(function () {
+        preLoad();
+        $("#com").load("admin.html");   //need to build html
+        console.log("load Sign up page");
+
+    });
+}
 
 function ShowSingnupPage() {
     $(document).ready(function () {
         preLoad();
-        $("#com").load("admin.html");   //need to build html
+        //$("#com").load(".html");   //need to build html
         console.log("load Sign up page");
 
     });
@@ -83,23 +94,22 @@ function ShowCatalog1(val1, val2, val3) {
         console.log(val3);
         for (let i = 0; i < data.length; i++) {
             if ((UserSize == data[i].size || UserSize == "all") && (UserGender == data[i].gender || UserGender == "all") && (UserCategory == data[i].category || UserCategory == "all")) {
-                $("#company").append(`<p id="proname"><b><Company:</b></font> ${data[i].company}</p> <p><b>Price:</b>${data[i].price}$</p>
+                $("#loadDiv").append(`<p id="proname"><b><Company:</b></font> ${data[i].company}</p> <p><b>Price:</b>${data[i].price}$</p>
                 <p><b>Color: </b>${data[i].color}</p>
                 <p><b>Size: </b>${data[i].size}</p>
                 <p><b>Gender: </b>${data[i].gender}</p>
                 <p><b>Category: </b>${data[i].category}</p>`);
-                var col = document.getElementById('company');
+                var col = document.getElementById('loadDiv');
                 col.innerHTML += '<button onclick="AddCart(' + i + ')">Add To Cart</button>';
-                document.getElementById("price").innerHTML += `<p><img id="image_` + i + `" class="pic"/></p><br><br><br><br><br>`;
+                document.getElementById("price").innerHTML += `<p><img id="image_` + i + `" class="pic"/></p><br><br><br>`;
                 $("#image" + "_" + i).attr("src", data[i].imageUrl);
                 $("#image" + "_" + i).attr("width", "300px");
                 $("#image" + "_" + i).attr("height", "195px");
                 count++;
-                
             }
         }
         if (count == 0) {
-            $("#company").append("Sorry! There are 0 results to your search. Please try again!");
+            $("#loadDiv").append("Sorry! There are 0 results to your search. Please try again!");
         }
 
     });
@@ -107,7 +117,7 @@ function ShowCatalog1(val1, val2, val3) {
 }
 function ShowCatalog2(val1, val2, val3) {
     $.get("catalogarr", function (data, status) {
-        $("#company").empty();
+        $("#loadDiv").empty();
         $("#price").empty();
         console.log(val1);
         console.log(val2);
@@ -118,12 +128,12 @@ function ShowCatalog2(val1, val2, val3) {
         let UserColor = val3;
         for (let i = 0; i < data.length; i++) {
             if ((UserPrice >= data[i].price || UserPrice == "all") && (UserCompany == data[i].company || UserCompany == "all") && (UserColor == data[i].color || UserColor == "all")) {
-                $("#company").append(`<p id="proname"><b><Company:</b></font> ${data[i].company}</p> <p><b>Price:</b>${data[i].price}$</p>
+                $("#loadDiv").append(`<p id="proname"><b><Company:</b></font> ${data[i].company}</p> <p><b>Price:</b>${data[i].price}$</p>
                 <p><b>Color: </b>${data[i].color}</p>
                 <p><b>Size: </b>${data[i].size}</p>
                 <p><b>Gender: </b>${data[i].gender}</p>
                 <p><b>Category: </b>${data[i].category}</p>`);
-                var col = document.getElementById('company');
+                var col = document.getElementById('loadDiv');
                 col.innerHTML += '<button onclick="AddCart(' + i + ')">Add To Cart</button>';
                 document.getElementById("price").innerHTML += `<p><img id="image_` + i + `" class="pic"/></p><br><br><br>`;
                 $("#image" + "_" + i).attr("src", data[i].imageUrl);
@@ -134,7 +144,7 @@ function ShowCatalog2(val1, val2, val3) {
         }
         console.log(count);
         if (count == 0) {
-            $("#company").append("Sorry! There are 0 results to your search. Please try again!");
+            $("#loadDiv").append("Sorry! There are 0 results to your search. Please try again!");
         }
 
     });
@@ -163,6 +173,38 @@ function Remove(i) {
 
 }
 
+function GroupByCompany() {
+    $("#loadDiv").empty();
+    $.get("groupbycompany", function (data, status) {
+        for (let i = 0; i < data.length; i++) {
+            $("#loadDiv").append(`<p id="proname"><b><Company:</b></font> ${data[i]._id}:${data[i].count}</p>`);
+        }
+
+    });
+
+
+}
+function GroupBySize() {
+    $("#loadDiv").empty();
+    $.get("groupbysize", function (data, status) {
+        for (let i = 0; i < data.length; i++) {
+            $("#loadDiv").append(`<p id="proname"><b><Company:</b></font> ${data[i]._id}:${data[i].count}</p>`);
+        }
+
+    });
+
+
+}
+function GroupByCategory() {
+    $("#loadDiv").empty();
+    $.get("groupbycategory", function (data, status) {
+        for (let i = 0; i < data.length; i++) {
+            $("#loadDiv").append(`<p id="proname"><b><Company:</b></font> ${data[i]._id}:${data[i].count}</p>`);
+        }
+
+    });
+}
+
 
 function AdminLogIn() {
     $("#wrong").empty();
@@ -172,12 +214,13 @@ function AdminLogIn() {
     var pa = '555';
     console.log(user.localeCompare(us));
     if (!(user.localeCompare(us) && pass.localeCompare(pa))) {
-        ShowSingnupPage();
+        ShowAdminPage();
     }
-    else {
-        $("#wrong").append('<p id="red" >The username or password is wrong</p>');
-        console.log("The username or password is wrong");
-    }
+    
+    $("#wrong").append('<p id="red" >The username or password is wrong</p>');
+    console.log("The username or password is wrong");
+
+    
 }
 
 

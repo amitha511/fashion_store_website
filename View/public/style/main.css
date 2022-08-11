@@ -465,11 +465,6 @@ footer h4 {
     text-align: left;
 }
 
-.pic1 {
-
-    margin-left: -25%;
-}
-
 .pic {
     margin-left: -350%;
 }
@@ -663,10 +658,13 @@ footer h4 {
     cursor: pointer;
 }
 
-/* ------------------------------------menu style: ------------------------------------*/
 
-.navbar{
-    background:linear-gradient(to top,#ffffff 70%, #e1e1e1 100%);;
+
+/*-------------------------------------------------------------- menu style: -------------------------------------------------------------*/
+
+.navbar {
+    background: linear-gradient(to top, #ffffff 70%, #e1e1e1 100%);
+    ;
     height: 80xp;
     display: flex;
     justify-content: center;
@@ -677,7 +675,7 @@ footer h4 {
     z-index: 999;
 }
 
-.navbar_container{
+.navbar_container {
     display: flex;
     justify-content: space-between;
     height: 30px;
@@ -688,9 +686,9 @@ footer h4 {
     padding: 0 50px;
 }
 
-#navbar_logo{
+#navbar_logo {
     background-color: #000000;
-    background-image: linear-gradient(to top,#000000 0%, #656565 100%);
+    background-image: linear-gradient(to top, #000000 0%, #656565 100%);
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -698,13 +696,13 @@ footer h4 {
     -moz-text-fill-color: transparent;
     display: flex;
     align-items: center;
-    cursor:pointer;
+    cursor: pointer;
     text-decoration: none;
     font-size: 2.3rem;
 }
 
 
-.navbar_menu{
+.navbar_menu {
     display: flex;
     padding: 10px 24px;
     align-items: center;
@@ -736,12 +734,134 @@ footer h4 {
 }
 
 .button:hover {
-    background:  #000000;
+    background: #000000;
     background-color: white;
     color: black;
-    border: 2px solid #a4a4a4; 
+    border: 2px solid #a4a4a4;
 
 }
+
+::selection {
+    color: #fff;
+    background: #675AFE;
+}
+
+.wrapper {
+    width: 370px;
+    padding: 30px;
+    border-radius: 7px;
+    background: #fff;
+    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+}
+
+.wrapper header {
+    font-size: 28px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.wrapper form {
+    margin: 40px 0 20px 0;
+}
+
+form :where(input, select, button) {
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+}
+
+form p {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+form input {
+    height: 50px;
+    font-size: 17px;
+    padding: 0 15px;
+    border: 1px solid #999;
+}
+
+form input:focus {
+    padding: 0 14px;
+    border: 2px solid #675AFE;
+}
+
+form .drop-list {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.drop-list .select-box {
+    display: flex;
+    width: 115px;
+    height: 45px;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: center;
+    border: 1px solid #999;
+}
+
+.select-box img {
+    max-width: 21px;
+}
+
+.select-box select {
+    width: auto;
+    font-size: 16px;
+    background: none;
+    margin: 0 -5px 0 5px;
+}
+
+.select-box select::-webkit-scrollbar {
+    width: 8px;
+}
+
+.select-box select::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+.select-box select::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+    border-right: 2px solid #ffffff;
+}
+
+.drop-list .icon {
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 22px;
+}
+
+form .exchange-rate {
+    font-size: 17px;
+    margin: 20px 0 30px;
+}
+
+form button {
+    height: 52px;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    background: #675AFE;
+    transition: 0.3s ease;
+}
+
+form button:hover {
+    background: #4534fe;
+}
+
+#exchange {
+    float: left;
+    margin-left: 20px;
+    border-style: solid;
+    border: #000000;
+}
+
+
  /* ------------------------------------done menu style ------------------------------------*/
 
 
@@ -826,9 +946,8 @@ footer h4 {
     font-size: 23px;
 }
 #red {
-    padding-top: 40px;
+    padding-top: 10px;
     padding-bottom: 30px;
-
     text-align: center;
     color: #ff0000;
     font-family: 'Ubuntu', sans-serif;
@@ -943,13 +1062,13 @@ a {
   
 /* table */
 
-  .wrapper {
+  .wrapperA {
     margin: 0 auto;
     padding: 40px;
     max-width: 800px;
   }
  
-  .table {
+  .tableA {
     margin: 0 0 40px 0;
     width: 100%;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -957,19 +1076,19 @@ a {
     scroll-snap-align: start;
   }
   
-  .row {
+  .rowA {
     display: table-row;
     background: #f6f6f6;
   }
-  .row:nth-of-type(odd) {
+  .rowA:nth-of-type(odd) {
     background: #e9e9e9;
   }
-  .row.header {
+  .rowA.header {
     font-weight: 900;
     color: #ffffff;
     background: #27ae60;
   }  
-  .cell {
+  .cellA {
     padding: 6px 12px;
     display: table-cell;
   }
