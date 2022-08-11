@@ -44,7 +44,7 @@ function ShowCatalogPage() {
 function ShowLogInPage() {
     $(document).ready(function () {
         preLoad();
-        //   $("#com").load("login.html");   need to build html
+        $("#com").load("password.html");  // need to build html
         console.log("load Log In page");
 
     });
@@ -53,7 +53,7 @@ function ShowLogInPage() {
 function ShowSingnupPage() {
     $(document).ready(function () {
         preLoad();
-        // $("#com").load("signup.html");   need to build html
+        $("#com").load("admin.html");   //need to build html
         console.log("load Sign up page");
 
     });
@@ -90,11 +90,12 @@ function ShowCatalog1(val1, val2, val3) {
                 <p><b>Category: </b>${data[i].category}</p>`);
                 var col = document.getElementById('company');
                 col.innerHTML += '<button onclick="AddCart(' + i + ')">Add To Cart</button>';
-                document.getElementById("price").innerHTML += `<p><img id="image_` + i + `" class="pic"/></p><br><br><br>`;
+                document.getElementById("price").innerHTML += `<p><img id="image_` + i + `" class="pic"/></p><br><br><br><br><br>`;
                 $("#image" + "_" + i).attr("src", data[i].imageUrl);
                 $("#image" + "_" + i).attr("width", "300px");
                 $("#image" + "_" + i).attr("height", "195px");
                 count++;
+                
             }
         }
         if (count == 0) {
@@ -163,6 +164,21 @@ function Remove(i) {
 }
 
 
+function AdminLogIn() {
+    $("#wrong").empty();
+    var user = document.getElementById('userAdmin').value;
+    var pass = document.getElementById('passAdmin').value;
+    var us = 'app';
+    var pa = '555';
+    console.log(user.localeCompare(us));
+    if (!(user.localeCompare(us) && pass.localeCompare(pa))) {
+        ShowSingnupPage();
+    }
+    else {
+        $("#wrong").append('<p id="red" >The username or password is wrong</p>');
+        console.log("The username or password is wrong");
+    }
+}
 
 
 

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <link rel="stylesheet" href="style/main.css" type="text/css">
+   
+</head>
+<body> 
+    <!-- DATA BASE  -->
+    <section class = 'bodyboxAdmin'>
+    <h1>data base:</h1>
+    <div class="wrapper">
+        <div id = "button">
+            <button type = "button" id="button">add</button>
+            <button type = "button" id="button">delete</button>
+            <button type = "button" id="button">delete</button>
+
+        </div>
+
+        <div class="table">
+          
+            <div class="row header">
+                <div class="cell">
+                item(key)
+                </div>
+                <div class="cell">
+                    company
+                </div>
+                <div class="cell">
+                price
+                </div>
+                <div class="cell">
+                color
+                </div>
+                <div class="cell">
+                    size
+                </div>
+                <div class="cell">
+                    gender
+                </div>
+                <div class="cell">
+                    category
+                </div>
+            </div>
+          
+            <div class="row">
+                <div class="cell" data-title="Name">
+                Luke Peters
+                </div>
+                <div class="cell" data-title="Age">
+                25
+                </div>
+                <div class="cell" data-title="Occupation">
+                Freelance Web Developer
+                </div>
+                <div class="cell" data-title="Location">
+                Brookline, MA
+                </div>
+                <div class="cell" data-title="Location">
+                    Brookline, MA
+                </div>
+                <div class="cell" data-title="Location">
+                    Brookline, MA
+                </div>
+                <div class="cell" data-title="Location">
+                    Brookline, MA
+                </div>
+        </div>
+          
+        <div class="row">
+            <div class="cell" data-title="Name">
+            Luke Peters
+            </div>
+            <div class="cell" data-title="Age">
+            25
+            </div>
+            <div class="cell" data-title="Occupation">
+            Freelance Web Developer
+            </div>
+            <div class="cell" data-title="Location">
+            Brookline, MA
+            </div>
+            <div class="cell" data-title="Location">
+                Brookline, MA
+            </div>
+            <div class="cell" data-title="Location">
+                Brookline, MA
+            </div>
+            <div class="cell" data-title="Location">
+                Brookline, MA
+            </div>
+        </div>
+          
+        <div class="row">
+            <div class="cell" data-title="Name">
+            Luke Peters
+            </div>
+            <div class="cell" data-title="Age">
+            25
+            </div>
+            <div class="cell" data-title="Occupation">
+            Freelance Web Developer
+            </div>
+            <div class="cell" data-title="Location">
+            Brookline, MA
+            </div>
+            <div class="cell" data-title="Location">
+                Brookline, MA
+            </div>
+            <div class="cell" data-title="Location">
+                Brookline, MA
+            </div>
+            <div class="cell" data-title="Location">
+                Brookline, MA
+            </div>
+        </div>
+           
+        </div>
+      </div>
+    </section>
+
+    <!-- FACEBOOK -->
+    <div class = 'bodyboxFace'>
+        <h1>Post in facebook</h1>
+        <p>creat post:</p>
+        <div class="block">
+            <textarea id="textbox" style="height: 100px; width: 400px;" class="commentbox" placeholder="What do you want to share?"></textarea>
+
+            <div id = "buttons">
+                <button type = "button" id="share-button">Share</button>
+            </div>
+
+        <!-- post -->
+            <script>    
+                 document.getElementById("share-button").addEventListener('click', function() {
+                let xhr = new XMLHttpRequest();
+                var message = document.getElementById('textbox').value //message
+                var accessToken = "EAAFm2n39aoEBANZAvgJEM8tZAZCagWkkZAZCj8dqWD549JUKfXkmBgBYoZAZC2P93xYTENEDChEZCNiCRmWuKGZAoNaooXpT7YaZAOZAGs3rwcTL0FuGiCc0LdxMrrTTbhDjsca8iUZBgszXgi3tRvL1neBNWjmLHdaVoLR354QZCr092lyVKxjohrSCaR5EnC7dbMlQZD"
+                var createPostRequest = "https://graph.facebook.com/v14.0/103914885705757/feed?message=" + encodeURIComponent(message) + "&access_token=" + accessToken
+                xhr.open("POST", createPostRequest);
+                xhr.onload = () => console.log(xhr.responseText);
+                xhr.send()
+                console.log(message);
+             });
+            </script>
+        
+        </div>
+    </section>
+
+</body>
+</html>
