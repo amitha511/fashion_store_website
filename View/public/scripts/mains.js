@@ -211,14 +211,20 @@ function AdminLogIn() {
     var user = document.getElementById('userAdmin').value;
     var pass = document.getElementById('passAdmin').value;
     var us = 'app';
-    var pa = '555';
-    console.log(user.localeCompare(us));
-    if (!(user.localeCompare(us) && pass.localeCompare(pa))) {
-        ShowAdminPage();
-    }
+    var pa = '5555';
+    console.log(pass);
+    console.log(pa);
     
-    $("#wrong").append('<p id="red" >The username or password is wrong</p>');
-    console.log("The username or password is wrong");
+        if (!pass.localeCompare(pa)) {
+            console.log(pass.localeCompare(pa));
+            if (!user.localeCompare(us)) {
+                console.log(user.localeCompare(us));
+                ShowAdminPage();
+            }
+        }
+    else {
+        $("#wrong").append('<p id="red" >The username or password is wrong</p>');
+        console.log("The username or password is wrong");
 
     
 }
