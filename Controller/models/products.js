@@ -17,7 +17,7 @@ const productSchema = mongoose.Schema({
     },
     category: {
         type: String,
-        enum: ['t-shirt', 'elegant', 'sport', 'plaid']
+        enum: ['t-shirt', 'plaid']
     },
     imageUrl: {
         type: String

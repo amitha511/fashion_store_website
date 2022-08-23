@@ -15,11 +15,13 @@
 
 <body>
     <script type="text/javascript" src="scripts/mains.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
     <section class="container">
         <h1>Our Catalog</h1>
         <p>
+        <div class="select">
             <label for="gender">Gedner</label>
             <select name="gender" id="gender">
                 <option value="all">all</option>
@@ -43,7 +45,8 @@
                 <option value="t-shirt">t-shirt</option>
                 <option value="plaid">plaid</option>
             </select>
-            <button type="button1" id="myButton1"
+
+            <button type="button1" class="btn-search" id="myButton1"
                 onclick="ShowCatalog1(document.getElementById('gender').value,document.getElementById('size').value,document.getElementById('category').value)">Search</button>
             <br>
             <label for="company1">Company</label>
@@ -59,7 +62,6 @@
                 <option value="Fendi">Fendi</option>
                 <option value="Gucci">Gucci</option>
                 <option value="Amiri">Amiri</option>
-
             </select>
 
             <label for="maxprice">MaxPrice</label>
@@ -70,8 +72,8 @@
                 <option value="250">250</option>
                 <option value="500">500</option>
                 <option value="1000">1000</option>
-
             </select>
+
             <label for="color">Color</label>
             <select name="color" id="color">
                 <option value="all">all</option>
@@ -84,32 +86,74 @@
                 <option value="pink">pink</option>
             </select>
 
-            <button type="button1" id="myButton2"
+            <button type="button1" class="btn-search" id="myButton2"
                 onclick="ShowCatalog2(document.getElementById('company1').value,document.getElementById('maxprice').value,document.getElementById('color').value)">Search</button>
-        </p>
+            </p>
+        </div>
     </section>
-    <section class="pro-container">
-        <div class="cart" id="cart">
-            <h2 class="cart-title">Your Cart</h2>
+
+    <!-- <section class="pro-container"> -->
+
+    <!-- <nav class="navbar">
+        <div class="navbar-center">
+            <div class="cart-btn">
+                <span class="nav-icon">
+
+                    <i class="fas fa-shopping-cart"></i>
+                </span>
+                <div class="cart-items">0</div>
+            </div>
+        </div>
+    </nav>  -->
+    <section class="products">
+        <div class="section-title">
+            <h2>Products</h2>
+        </div>
+        <div class="products-center"></div>
+    </section>
+    <div class="cart-overlay">
+        <div class="cart">
+            <span class="close-cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </span>
+            <br>
+            <h2>Cart</h2>
             <div class="cart-content">
                 <div class="cart-box">
                     <div class="detail-box">
                         <div class="cart-product-title"></div>
                         <div class="cart-price"></div>
-                        <input type="number" value="1" class="cart-quantity">
                     </div>
-                    <i class="bx bxs-trash-alt cart-remove"></i>
                 </div>
             </div>
-            <div class="total">
-                <div class="total-title">Total</div>
-                <div class="tota-price">0$</div>
+            <div class="cart-footer">
+                <h3>Total Price:<div class="cart-total">0</div>USD
+                </h3>
             </div>
-            <button type="button" class="btn-buy">Buy Now</button>
-            <i class="bx bx-x" id="close-cart"></i>
-        </div>
 
-    </section>
+            <input class="un" value="" type="text" placeholder="Please Insert Your ID">
+            <div class="userAlert"></div>
+            <div class="userAlert2"></div>
+            <button type="button" class="btn-buy" onclick="BuyNow()">Buy Now</button>
+
+
+        </div>
+    </div>
+    <!-- </section> -->
+    <!-- <div class="cart-overlay">
+        <div class="cart">
+            <span class="close-cart">
+                <i class="fas fa-times"></i>
+            </span>
+            <h2>Cart</h2>
+            <div class="cart-content"></div>
+            <div class="cart-footer">
+                <h3>Total Price: $<span class="cart-total"></span></h3>
+                <button class="clear-cart btn">Remove Products</button>
+            </div>
+        </div>
+    </div> -->
+
 </body>
 
 </html>

@@ -5,7 +5,7 @@
 }
 
 #bd {
-    background-image: url(../images/background.jpg);
+    /* background-image: url(../images/background.jpg); */
     background-repeat: no-repeat;
 }
 
@@ -13,22 +13,15 @@
     font-size: large;
 }
 
+
 .header {
-    min-height: 100vh;
+    /*מרחק הכותרת בדף נחיתה מהפסקה מתחתיו*/
+    min-height: 90vh;
     width: 100%;
     background-position: center;
     background-size: cover;
     position: relative;
 }
-
-/* #header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 80px;
-    background: #E3E6F3;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-} */
 
 nav {
     display: flex;
@@ -77,7 +70,7 @@ nav img {
     width: 90%;
     color: rgb(0, 0, 0);
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -87,25 +80,18 @@ nav img {
     font-size: 62px;
 }
 
-.text-box p {
+/* .text-box p {
     margin: 10px 0 40px;
     font-size: 14px;
     color: rgb(0, 0, 0);
+} */
+
+.text-box h2 {
+    margin: 10px 0 40px;
+    color: rgba(58, 54, 54, 0.5);
 }
 
 .hero-btn {
-    display: inline-block;
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    border: 1px solid rgb(0, 0, 0);
-    padding: 12px 34px;
-    font-size: 13px;
-    background: transparent;
-    position: relative;
-    cursor: pointer;
-}
-
-.hero-btn-two {
     display: inline-block;
     text-decoration: none;
     color: rgb(255, 255, 255);
@@ -118,12 +104,6 @@ nav img {
 }
 
 .hero-btn:hover {
-    border: 1px solid #8d8989;
-    background: #8d8989;
-    transition: ls;
-}
-
-.hero-btn-two:hover {
     border: 1px solid #8d8989;
     background: #8d8989;
     transition: ls;
@@ -171,7 +151,10 @@ nav .fa {
     width: 80%;
     margin: auto;
     text-align: center;
-    padding-top: 100px;
+}
+
+.one h3 {
+    color: rgba(58, 54, 54, 0.5);
 }
 
 h1 {
@@ -224,6 +207,10 @@ h3 {
     margin: auto;
     text-align: center;
     padding-top: 50px;
+}
+
+.two h3 {
+    color: rgba(58, 54, 54, 0.5);
 }
 
 .two-col {
@@ -279,40 +266,13 @@ h3 {
 }
 
 .three iframe {
-    width: 500px;
-    height: 400px;
-    padding-left: 350px;
-}
-
-/*
-.three-col {
-    flex-basis: 35%;
-    border-radius: 10px;
-    margin-bottom: 5%;
-    text-align: left;
-}
-
-/*
-.three-col img {
     width: 100%;
-    border-radius: 10px;
-    padding-left: 400px;
-}    check if there is another way to locate this in the mid on website 
-
- .three-col p {
-    padding: 0;
+    padding-left: 300px;
 }
-
-.three-col h3 {
-    margin-top: 16px;
-    margin-bottom: 15px;
-    text-align: left;
-} 
-*/
 
 #map {
-    height: 90px;
-    width: 50px;
+    height: 400px;
+    width: 50%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -325,6 +285,10 @@ h3 {
     text-align: center;
 }
 
+.four h3 {
+    color: rgba(58, 54, 54, 0.5);
+}
+
 .four-col {
     flex-basis: 29%;
     border-radius: 10px;
@@ -332,7 +296,6 @@ h3 {
     text-align: left;
     background: rgba(122, 120, 120, 0.125);
     padding: 20px;
-    cursor: pointer;
     display: flex;
 }
 
@@ -368,9 +331,6 @@ h3 {
 }
 
 #video .video {
-    /* width: 70%;
-    height: 100%;
-    margin: 30px auto 0 auto; */
     height: 400px;
     width: 50%;
     display: block;
@@ -434,7 +394,7 @@ footer h4 {
 .sub-header {
     height: 35vh;
     width: 100%;
-    background-image: url("/WebProject/View/public/images/background.jpg");
+    /* background-image: url("/WebProject/View/public/images/background.jpg"); */
     background-position: center;
     background-size: cover;
     text-align: center;
@@ -444,6 +404,8 @@ footer h4 {
 .sub-header h1 {
     margin-top: 80px;
 }
+
+/* --------------------------------------Cart and Catalog------------------------------------------ */
 
 #product-list {
     text-align: center;
@@ -513,20 +475,6 @@ footer h4 {
     color: #1a1a1a;
 }
 
-/* #product1 .pro .add-cart {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 50px;
-    background-color: #e8f6ea;
-    font-weight: 500;
-    color: #1a1a1a;
-    border: 1px solid #cce7d0;
-    position: absolute;
-    bottom: 20px;
-    right: 10px;
-} */
-
 :root {
     --main-color: rgb(87, 113, 197);
     --bg-color: #fff;
@@ -544,15 +492,17 @@ footer h4 {
 }
 
 .cart {
-    position: fixed;
+    /*מיקום העגלה*/
+    position: absolute;
     top: 0;
     right: 0;
-    width: 360px;
+    width: 350px;
     min-height: 100vh;
-    padding: 20px;
+    padding: 1.5rem;
     background: var(--bg-color);
     box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
-    transition: 0.3s;
+    transition: all 0.3s linear;
+    overflow: scroll;
 }
 
 .cart.active {
@@ -626,6 +576,7 @@ footer h4 {
 }
 
 .btn-buy {
+    /*כפתור קנייה בסל*/
     display: flex;
     margin: 1.5rem auto 0 auto;
     padding: 12px 20px;
@@ -642,14 +593,6 @@ footer h4 {
 }
 
 #close-cart {
-    /* position: absolute;
-    top: 1rem;
-    right: 0.8rem;
-    font-size: 2rem;
-    color: var(#171427);
-    cursor: pointer; */
-
-
     font-size: 2rem;
     color: var(--text-color);
     position: absolute;
@@ -658,13 +601,87 @@ footer h4 {
     cursor: pointer;
 }
 
+.bag-btn {
+    /*add to cart btn details*/
+    background: #2a1c1c;
+    color: #ffffff;
+    cursor: pointer;
+}
 
+/* new */
 
-/*-------------------------------------------------------------- menu style: -------------------------------------------------------------*/
+#pinin {
+    display: inline-block;
+    text-align: center;
+}
+
+#quan {
+    text-align: left;
+    position: relative;
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+.btn-minus-btn,
+.btn-plus-btn {
+    padding: 7px 10px 8px;
+    height: 41px;
+    background-color: #e9e9e9;
+    border: 1px solid #efefef;
+    cursor: pointer;
+}
+
+.btn-minus-btn {
+    border-right: 0;
+}
+
+.btn-plus-btn {
+    border-left: 0;
+}
+
+.btn-minus-btn:hover,
+.btn-plus-btn:hover {
+    background: #eeeeee;
+}
+
+.btn-minus-btn:focus,
+.btn-plus-btn:focus {
+    outline: none;
+}
+
+.btn-search {
+    /*search button*/
+    margin: 1.5rem auto 0 auto;
+    padding: 5px 5px;
+    border: none;
+    background: var(--main-color);
+    color: var(--bg-color);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-add {
+    /*add to cart btn details*/
+    background: var(--main-color);
+    color: #ffffff;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.btn-rmv {
+    /*add to cart btn details*/
+    background: #000000;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* --------------------------------------done Cart and Catalog---------------------------- */
+
+/*----------------------------------------- menu style: -----------------------------------*/
 
 .navbar {
     background: linear-gradient(to top, #ffffff 70%, #e1e1e1 100%);
-    ;
     height: 80xp;
     display: flex;
     justify-content: center;
@@ -691,7 +708,7 @@ footer h4 {
     background-image: linear-gradient(to top, #000000 0%, #656565 100%);
     background-size: 100%;
     -webkit-background-clip: text;
-    -moz-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
     display: flex;
@@ -862,17 +879,18 @@ form button:hover {
 }
 
 
- /* ------------------------------------done menu style ------------------------------------*/
+/* ------------------------------------done menu style ---------------------------------------*/
 
 
-/* ------------------------------------chat style -----------------------------------------*/
+/* ------------------------------------chat style --------------------------------------------*/
 
 .bodybox {
-    margin:auto;
-    max-width: 550px;
-    background-position:left top;
+    margin: auto;
+    max-width: 730px;
+    max-height: 1000px;
+    overflow: scroll;
+    background-position: left top;
     font: 15px arial, sans-serif;
-    /* background-color: white; */
     border-style: solid;
     border-width: 1px;
     text-align: center;
@@ -883,11 +901,12 @@ form button:hover {
     padding-left: 50px;
     box-shadow: 5px 5px 5px grey;
     border-radius: 15px;
-  }
-  
+    background-image: url('../images/chat.jpeg');
+}
+
 .chatborder {
     border-style: solid;
-    background-image:url('chat.jpeg');
+    background-image: url('../images/chat.jpeg');
     background-color: #faf7f1;
     border-width: 3px;
     margin-top: 20px;
@@ -900,10 +919,10 @@ form button:hover {
     padding-left: 15px;
     border-radius: 10px;
     border-color: #d3c1c1;
-  }
+}
 
-  .message1{
-    border-width:10px ;
+.message1 {
+    border-width: 10px;
     background-color: #caf4c0;
     border-width: 3px;
     margin-top: 10px;
@@ -916,24 +935,24 @@ form button:hover {
     padding-right: 150px;
     padding-left: 15px;
     border-radius: 20px;
-  }
-  
-  .chatbox {
+}
+
+.chatbox {
     font: 17px arial, sans-serif;
     height: 22px;
     width: 200px;
-  }
+}
 
 /* ------------------------------------done chat style -----------------------------------------*/
 
-/* --------------------------------------passward style-------------------------------------------- */
+/* --------------------------------------passward style-----------------------------------------*/
 
 .main {
     background-color: #FFFFFF;
     width: 400px;
     height: 400px;
-    margin-left:185%;
-    margin-top:15%;
+    margin-left: 185%;
+    margin-top: 15%;
     border-radius: 1.5em;
     box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
@@ -945,6 +964,7 @@ form button:hover {
     font-weight: bold;
     font-size: 23px;
 }
+
 #red {
     padding-top: 10px;
     padding-bottom: 30px;
@@ -956,23 +976,28 @@ form button:hover {
 }
 
 .un {
-width: 76%;
-color: rgb(38, 50, 56);
-font-weight: 700;
-font-size: 14px;
-letter-spacing: 1px;
-background: rgba(136, 126, 126, 0.04);
-padding: 10px 20px;
-border: none;
-border-radius: 20px;
-outline: none;
-box-sizing: border-box;
-border: 2px solid rgba(0, 0, 0, 0.02);
-margin-bottom: 50px;
-margin-left: 46px;
-text-align: center;
-margin-bottom: 27px;
-font-family: 'Ubuntu', sans-serif;
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.un1 {
+    width: 10%;
+    border: 2px solid #000000;
 }
 
 form.form1 {
@@ -980,33 +1005,33 @@ form.form1 {
 }
 
 .pass {
-        width: 76%;
-color: rgb(38, 50, 56);
-font-weight: 700;
-font-size: 14px;
-letter-spacing: 1px;
-background: rgba(136, 126, 126, 0.04);
-padding: 10px 20px;
-border: none;
-border-radius: 20px;
-outline: none;
-box-sizing: border-box;
-border: 2px solid rgba(0, 0, 0, 0.02);
-margin-bottom: 50px;
-margin-left: 46px;
-text-align: center;
-margin-bottom: 27px;
-font-family: 'Ubuntu', sans-serif;
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
 }
 
-
-.un:focus, .pass:focus {
+.un:focus,
+.pass:focus {
     border: 2px solid rgba(0, 0, 0, 0.18) !important;
-    
+
 }
 
 .submit {
-  cursor: pointer;
+    cursor: pointer;
     border-radius: 5em;
     color: #fff;
     background: linear-gradient(to right, #9C27B0, #E040FB);
@@ -1033,71 +1058,50 @@ a {
     text-decoration: none
 }
 
-    
-/* --------------------------------------done passward style-------------------------------------------- */
+
+/* --------------------------------------done passward style------------------------------------ */
 
 
 /* --------------------------------------admin style-------------------------------------------- */
 
 .bodyboxAdmin {
-    margin:auto;
-    max-width: 550px;
-    /* background-position:left top; */
-    font: 15px arial, sans-serif;
-    /* background-color: white; */
-    border-style: solid;
-    border-width: 1px;
-    text-align: center;
-    margin-top: 50px;
-    margin-left: 500px;
-    padding-top: 20px;
-    padding-bottom: 25px;
-    padding-right: 200px;
     padding-left: 50px;
-    box-shadow: 5px 5px 5px grey;
-    border-radius: 15px;
-    
+}
 
-  }
-  
-/* table */
-
-  .wrapperA {
-    margin: 0 auto;
-    padding: 40px;
-    max-width: 800px;
-  }
- 
-  .tableA {
+.tableA {
     margin: 0 0 40px 0;
     width: 100%;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     display: table;
     scroll-snap-align: start;
-  }
-  
-  .rowA {
+}
+
+.rowA {
     display: table-row;
     background: #f6f6f6;
-  }
-  .rowA:nth-of-type(odd) {
+}
+
+.rowA:nth-of-type(odd) {
     background: #e9e9e9;
-  }
-  .rowA.header {
+}
+
+.rowA.header {
     font-weight: 900;
     color: #ffffff;
-    background: #27ae60;
-  }  
-  .cellA {
+    background: var(--main-color);
+}
+
+.cellA {
     padding: 6px 12px;
     display: table-cell;
-  }
-  /* done table */
+}
 
- /* textbox facebook */
+/* done table */
 
- .bodyboxFace {
-    margin:auto;
+/* textbox facebook */
+
+.bodyboxFace {
+    margin: auto;
     max-width: 550px;
     /* background-position:left top; */
     font: 15px arial, sans-serif;
@@ -1113,45 +1117,88 @@ a {
     padding-left: 50px;
     box-shadow: 5px 5px 5px grey;
     border-radius: 15px;
-    
+}
 
-  }
- .block
- {
+.block {
     padding-left: 100px;
-     width: 450px;
-     float: left;
- }
- 
- .comments
- {
-     width: 400px;
-     float: left;
-     min-height: 40px;
- }
+    width: 450px;
+    float: left;
+}
 
- .commentbox
-  { 
-     overflow-y: hidden;
-     height: 20px;
-     width: 400px;
- }
- .divfloat
- {
-     float: left;
- }
- .imageicons
- {
-     height: 40px;
-     width: 42px;
- }
- .commentinfo
- {
-     background: yellow;
-     word-wrap: break-word;
-     width: 352px;
- }
+.comments {
+    width: 400px;
+    float: left;
+    min-height: 40px;
+}
 
-  
+.commentbox {
+    overflow-y: hidden;
+    height: 20px;
+    width: 400px;
+}
 
-  /* --------------------------------done admin style------------------------------------------------------------- */
+.divfloat {
+    float: left;
+}
+
+.imageicons {
+    height: 40px;
+    width: 42px;
+}
+
+.commentinfo {
+    background: yellow;
+    word-wrap: break-word;
+    width: 352px;
+}
+
+/* --------------------------------done admin style------------------------------------------------ */
+
+.bodyboxL {
+    margin: auto;
+    width: 50%;
+    border: 3px solid black;
+    padding: 10px;
+}
+
+.result {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
+
+.errmsg {
+    color: red;
+}
+
+/* -- quantity box in Cart-- */
+
+/* --------------------------------buttons style------------------------------------------------ */
+
+.shareAdmin {
+	box-shadow:inset 0px 1px 0px 0px #7a8eb9;
+	background:linear-gradient(to bottom, #637aad 5%, #5972a7 100%);
+	background-color:#637aad;
+	border:1px solid #314179;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+}
+.shareAdmin:hover {
+	background:linear-gradient(to bottom, #5972a7 5%, #637aad 100%);
+	background-color:#5972a7;
+}
+.shareAdmin:active {
+	position:relative;
+	top:1px;
+}
+
+       
+
+/* --------------------------------done buttons style------------------------------------------------ */

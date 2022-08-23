@@ -1,141 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   
+
     <link rel="stylesheet" href="style/main.css" type="text/css">
-   
+
 </head>
-<body> 
+
+<body>
     <!-- DATA BASE  -->
-    <section class = 'bodyboxAdmin'>
-    <h1>data base:</h1>
-    <div class="wrapperA">
-        <div id = "button">
-            <button type = "button" id="button">add</button>
-            <button type = "button" id="button">delete</button>
-            <button type = "button" id="button">delete</button>
+    <section class='bodyboxAdmin'>
+        <h1>Manage Your Data Base</h1>
+        <br>
+        <div>
+            <div id="button">
+                <button type="button" id="button" onclick="ShowDB()">Search</button>
+                <button type="button" id="button" onclick="AddProduct()">Add</button>
+                <button type="button" id="button" onclick="UpdateProduct()">Update</button>
+                <button type="button" id="button" onclick="ClearInput()">Clear</button>
 
+            </div>
+            <div>
+                <label>Key:</label>
+                <input class="key" value="" type="text" placeholder="" readonly>
+                <label>Company:</label>
+                <input class="company" value="" type="text" placeholder="">
+                <label>Price:</label>
+                <input class="price" value="" type="number" placeholder="">
+                <label>Color:</label>
+                <input class="color" value="" type="text" placeholder="">
+                <br>
+                <label>Size:</label>
+                <input class="size" value="" type="text" placeholder="Between S-XXL">
+                <label>Gender:</label>
+                <input class="gender" value="" type="text" placeholder="male/female">
+                <label>Category:</label>
+                <input class="category" value="" type="text" placeholder="t-shirt/plaid">
+                <label>Image:</label>
+                <input class="image" value="" type="text" placeholder="">
+            </div>
+            <br>
+            <div class="errmsg"></div>
+            <div class="tableA">
+
+                <div class="rowA header">
+                    <div class="cellA">
+                        item(key)
+                    </div>
+                    <div class="cellA">
+                        company
+                    </div>
+                    <div class="cellA">
+                        price
+                    </div>
+                    <div class="cellA">
+                        color
+                    </div>
+                    <div class="cellA">
+                        size
+                    </div>
+                    <div class="cellA">
+                        gender
+                    </div>
+                    <div class="cellA">
+                        category
+                    </div>
+                    <div class="cellA">
+                        image
+                    </div>
+
+                </div>
+
+
+            </div>
         </div>
-
-        <div class="tableA">
-          
-            <div class="rowA header">
-                <div class="cellA">
-                item(key)
-                </div>
-                <div class="cellA">
-                    company
-                </div>
-                <div class="cellA">
-                price
-                </div>
-                <div class="cellA">
-                color
-                </div>
-                <div class="cellA">
-                    size
-                </div>
-                <div class="cellA">
-                    gender
-                </div>
-                <div class="cellA">
-                    category
-                </div>
-            </div>
-          
-
-            <div class="rowA">
-                <div class="cellA" data-title="Name">
-                Luke Peters
-                </div>
-                <div class="cellA" data-title="Age">
-                25
-                </div>
-                <div class="cellA" data-title="Occupation">
-                Freelance Web Developer
-                </div>
-                <div class="cellA" data-title="Location">
-                Brookline, MA
-                </div>
-                <div class="cellA" data-title="Location">
-                    Brookline, MA
-                </div>
-                <div class="cellA" data-title="Location">
-                    Brookline, MA
-                </div>
-                <div class="cellA" data-title="Location">
-                    Brookline, MA
-                </div>
-        </div>
-
-        
-        <div class="rowA">
-            <div class="cellA" data-title="Name">
-            Luke Peters
-            </div>
-            <div class="cellA" data-title="Age">
-            25
-            </div>
-            <div class="cellA" data-title="Occupation">
-            Freelance Web Developer
-            </div>
-            <div class="cellA" data-title="Location">
-            Brookline, MA
-            </div>
-            <div class="cellA" data-title="Location">
-                Brookline, MA
-            </div>
-            <div class="cellA" data-title="Location">
-                Brookline, MA
-            </div>
-            <div class="cellA" data-title="Location">
-                Brookline, MA
-            </div>
-    </div>
-    
-        <div class="rowA">
-            <div class="cellA" data-title="Name">
-            Luke Peters
-            </div>
-            <div class="cellA" data-title="Age">
-            25
-            </div>
-            <div class="cellA" data-title="Occupation">
-            Freelance Web Developer
-            </div>
-            <div class="cellA" data-title="Location">
-            Brookline, MA
-            </div>
-            <div class="cellA" data-title="Location">
-                Brookline, MA
-            </div>
-            <div class="cellA" data-title="Location">
-                Brookline, MA
-            </div>
-            <div class="cellA" data-title="Location">
-                Brookline, MA
-            </div>
-    </div>
-    
-           
-        </div>
-      </div>
     </section>
 
     <!-- FACEBOOK -->
-    <div class = 'bodyboxFace'>
-        <h1>Post in facebook</h1>
-        <p>creat post:</p>
-        <div class="block">
-            <textarea id="textbox" style="height: 100px; width: 400px;" class="commentbox" placeholder="What do you want to share?"></textarea>
+    <div class='bodyboxAdmin'>
+        <h1>Create post in facebook</h1>
+        <br>
+        <textarea id="textbox" style="height: 100px; width: 400px;" class="commentbox"
+            placeholder="What do you want to share?"></textarea>
 
-            <div id = "buttons">
-                <button type = "button" id="share-button">Share</button>
-            </div>
+        <div id="buttons">
+            <button type="button" id="share-button" class="shareAdmin"
+                onclick="faceBookPost(document.getElementById('textbox').value)">Share</button>
+        </div>
 
         <!-- post -->
-            <script>    
-                 document.getElementById("share-button").addEventListener('click', function() {
+        <!-- <script>
+            document.getElementById("share-button").addEventListener('click', function () {
                 let xhr = new XMLHttpRequest();
                 var message = document.getElementById('textbox').value //message
                 var accessToken = "EAAFm2n39aoEBANZAvgJEM8tZAZCagWkkZAZCj8dqWD549JUKfXkmBgBYoZAZC2P93xYTENEDChEZCNiCRmWuKGZAoNaooXpT7YaZAOZAGs3rwcTL0FuGiCc0LdxMrrTTbhDjsca8iUZBgszXgi3tRvL1neBNWjmLHdaVoLR354QZCr092lyVKxjohrSCaR5EnC7dbMlQZD"
@@ -144,11 +99,12 @@
                 xhr.onload = () => console.log(xhr.responseText);
                 xhr.send()
                 console.log(message);
-             });
-            </script>
-        
-        </div>
+            });
+        </script> -->
+
+    </div>
     </section>
 
 </body>
+
 </html>
