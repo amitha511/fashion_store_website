@@ -1,6 +1,6 @@
 # Website Fashion shop
 
-<h1>Technologies:</h1>
+<h3>Technologies:</h3>
 <li>The system infrastructure is based on Node.JS on the server side.</li>
 <li>Using Express.JS web framework on the server side.</li>
 <li>Storing and retrieving the data from Mongo DB.</li>
