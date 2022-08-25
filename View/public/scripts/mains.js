@@ -423,6 +423,7 @@ function AdminLogIn() {
 /*---------------------------------------Admin Page-------------------------------------------*/
 //Search Button - Show all the Product DB
 function ShowDB() {
+    let company = document.getElementById("com").getElementsByClassName("company")[0].value;
     document.getElementById("com").getElementsByClassName("errmsg")[0].innerHTML = "";
     document.getElementById("com").getElementsByClassName("tableA")[0].innerHTML = "";
     document.getElementById("com").getElementsByClassName("tableA")[0].innerHTML = `<div class="rowA header">
@@ -455,7 +456,8 @@ function ShowDB() {
     $.get("catalogarr", function (data, status) {
 
         for (let i = 0; i < data.length; i++) {
-            document.getElementById("com").getElementsByClassName("tableA")[0].innerHTML += ` <div class="rowA">
+            if (company == "" || company == data[i].company) {
+                document.getElementById("com").getElementsByClassName("tableA")[0].innerHTML += ` <div class="rowA">
         <div data-title="Name">
         ${data[i]._id}
         </div>
@@ -484,13 +486,13 @@ function ShowDB() {
         <button onclick="DeleteProduct(` + i + `)">Delete</button>
         </div>
         `
-            $("#image" + "_" + i).attr("src", data[i].imageUrl)
-            $("#image" + "_" + i).attr("width", "80px")
-            $("#image" + "_" + i).attr("height", "70px")
+                $("#image" + "_" + i).attr("src", data[i].imageUrl)
+                $("#image" + "_" + i).attr("width", "80px")
+                $("#image" + "_" + i).attr("height", "70px")
+
+            }
 
         }
-
-
     });
 
 
@@ -658,7 +660,7 @@ function AddMarker(mapArgument, map) {
 function faceBookPost(value) {
     let xhr = new XMLHttpRequest();
     var message = value //message
-    var accessToken = "EAAFm2n39aoEBANZAvgJEM8tZAZCagWkkZAZCj8dqWD549JUKfXkmBgBYoZAZC2P93xYTENEDChEZCNiCRmWuKGZAoNaooXpT7YaZAOZAGs3rwcTL0FuGiCc0LdxMrrTTbhDjsca8iUZBgszXgi3tRvL1neBNWjmLHdaVoLR354QZCr092lyVKxjohrSCaR5EnC7dbMlQZD"
+    var accessToken = "EAAFm2n39aoEBAJcWQAQFJB3ZCvlKR8BtqK7oV7d2x0tUtZADHZAAFstd61wEjyKyqcyXLpKRRCpkDmodL0JxjiBRrZCJ15yxngcVsRu1JNPI7zX3ITjJFyDHBPZBOLn2giUKcA60le4ZCSZCdWYJOBts2vjolloYpBu2CuNma1JfGRXe7o4w1pHnIZBe8lYPSK0ZD"
     var createPostRequest = "https://graph.facebook.com/v14.0/103914885705757/feed?message=" + encodeURIComponent(message) + "&access_token=" + accessToken
     xhr.open("POST", createPostRequest);
     xhr.onload = () => console.log(xhr.responseText);

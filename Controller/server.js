@@ -5,8 +5,6 @@ var server = express(); // express.createServer();
 var Product = require('./models/products');
 var mongoose = require('mongoose');
 var db = require('../Model/db');
-var fun = require('../Model/functions');
-var msgs = [];
 var app = http.createServer(server);
 const { Server } = require("socket.io");
 const io = new Server(app);
@@ -14,9 +12,7 @@ mongoose.connect('mongodb+srv://pro:DDwiYcBcxZDXEHDR@cluster0.iqfprtk.mongodb.ne
 mongoose.connection.on('connected', () => {
     console.log("Connection Successful!");
 });
-
-var public = path.join("C:/Users/user/Desktop/Website/View/public");
-
+var public = path.join("C:/Users/97252/Desktop/project/WebProject1/View/public");
 server.use("/", express.static(public));
 server.use(express.static('../View/public/images'));
 
@@ -25,6 +21,7 @@ server.get('/catalogarr', async (req, res) => {
     res.json(pro);
 
 });
+/* --------Group By Query---------*/
 server.get('/groupbycompany', async (req, res) => {//GroupByCompany Query
     const group = await Product.aggregate([
         { "$group": { _id: "$company", count: { $sum: 1 } } }
@@ -105,7 +102,7 @@ server.post('/deleteproduct', (req, res) => {//Post Request - Delete Button on A
     db.deleteProduct(id);
 });
 //------Socket IO on Chat Page-------
-var usernames = {};
+var usernames = {};//usernames array
 io.sockets.on('connection', function (socket) {
     console.log("connect1");
     // when the client emits 'sendchat', this listens and executes

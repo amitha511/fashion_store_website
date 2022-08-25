@@ -1152,11 +1152,9 @@ a {
     width: 352px;
 }
 
-/* --------------------------------done admin style------------------------------------------------ */
-
 .bodyboxL {
     margin: auto;
-    width: 50%;
+    width: 60%;
     border: 3px solid black;
     padding: 10px;
 }
@@ -1172,60 +1170,41 @@ a {
     color: red;
 }
 
-/* -- quantity box in Cart-- */
-
-/* --------------------------------buttons style------------------------------------------------ */
- /* facebook share */
-.shareAdmin {
-	box-shadow:inset 0px 1px 0px 0px #7a8eb9;
-	background:linear-gradient(to bottom, #637aad 5%, #5972a7 100%);
-	background-color:#637aad;
-	border:1px solid #314179;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:13px;
-	font-weight:bold;
-	padding:6px 12px;
-	text-decoration:none;
-}
-.shareAdmin:hover {
-	background:linear-gradient(to bottom, #5972a7 5%, #637aad 100%);
-	background-color:#5972a7;
-}
-.shareAdmin:active {
-	position:relative;
-	top:1px;
-}
-
-
+/* --------------------------------done admin style------------------------------------------------ */
 .myButton {
-	box-shadow:inset 0px 1px 0px 0px #bbdaf7;
-	background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
-	background-color:#79bbff;
-	border-radius:6px;
-	border:1px solid #84bbf3;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #528ecc;
+    box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+    background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+    background-color: #79bbff;
+    border-radius: 6px;
+    border: 1px solid #84bbf3;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #528ecc;
 }
+
 .myButton:hover {
-	background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
-	background-color:#378de5;
+    background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+    background-color: #378de5;
 }
+
 .myButton:active {
-	position:relative;
-	top:1px;
+    position: relative;
+    top: 1px;
 }
 
-
-       
-
-/* --------------------------------done buttons style------------------------------------------------ */
+/* -- quantity box in Cart-- */
+/*Search Page*/
+aside {
+    width: 40%;
+    padding-left: 30px;
+    margin-left: 30px;
+    float: left;
+    Text-shadow: var(--main-color);
+    transition: all;
+}
