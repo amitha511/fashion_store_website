@@ -1,5 +1,11 @@
 # Website Fashion shop
 
+In the controller directory, you can run:
+
+```
+npm start
+```
+
 <h3>Technologies:</h3>
 <li>The system infrastructure is based on Node.JS on the server side.</li>
 <li>Using Express.JS web framework on the server side.</li>
@@ -14,4 +20,3 @@
 <li>Facebook API interface, publishing posts on a Facebook page through the website.</li>
 
 https://user-images.githubusercontent.com/93584464/186225558-1edc9dc2-5adc-47f4-897d-c4959df9515f.mp4
-

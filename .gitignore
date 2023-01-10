@@ -11,3 +11,4 @@ View/public/scripts/package-lock.json
 View/public/scripts/package.json
 Model/.idea/*
 .idea/*
+.npmignore

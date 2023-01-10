@@ -12,7 +12,7 @@ mongoose.connect('mongodb+srv://pro:DDwiYcBcxZDXEHDR@cluster0.iqfprtk.mongodb.ne
 mongoose.connection.on('connected', () => {
     console.log("Connection Successful!");
 });
-var public = path.join("C:/Users/97252/Desktop/project/WebProject1/View/public");
+var public = path.join("C:/Users/user/Desktop/WebProject1/View/public");
 server.use("/", express.static(public));
 server.use(express.static('../View/public/images'));
 
