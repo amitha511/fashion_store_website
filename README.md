@@ -1,6 +1,12 @@
 # Website Fashion shop
 
-In the controller directory, you can run:
+In the Model and Controller directories run command:
+
+```
+npm i
+```
+
+Then in the controller directory, you can run:
 
 ```
 npm start

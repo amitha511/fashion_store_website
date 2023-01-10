@@ -1,5 +1,6 @@
 Controller/node_modules/*
 Model/node_modules/*
+Model/package-lock.json
 View/public/node_modules/*
 View/public/package-lock.json
 Controller/package-lock.json
