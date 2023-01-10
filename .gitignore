@@ -2,12 +2,10 @@ Controller/node_modules/*
 Model/node_modules/*
 View/public/node_modules/*
 View/public/package-lock.json
-View/public/package.json
 Controller/package-lock.json
 View/public/images/*
 View/public/scripts/node_modules/
 View/public/scripts/package-lock.json
-View/public/scripts/package.json
 Model/.idea/*
 .idea/*
 .npmignore
