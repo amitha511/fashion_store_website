@@ -1,6 +1,6 @@
 # Website Fashion shop
 
-to run the project run the next commands:
+to run the project run the next command:
 ```
 npm start
 ```
