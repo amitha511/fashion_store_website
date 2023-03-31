@@ -1,0 +1,7 @@
+{
+"scripts": {
+    "start": "cd model && npm i && cd ../controller && npm i && npm start"
+}
+
+  
+}

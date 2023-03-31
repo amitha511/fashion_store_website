@@ -3,14 +3,10 @@
 In the Model and Controller directories run command:
 
 ```
-npm i
-```
-
-Then in the controller directory, you can run:
-
-```
 npm start
 ```
+
+and open: http://localhost:8080
 
 <h3>Technologies:</h3>
 <li>The system infrastructure is based on Node.JS on the server side.</li>
