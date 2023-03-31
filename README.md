@@ -1,7 +1,6 @@
 # Website Fashion shop
 
-In the Model and Controller directories run command:
-
+to run the project run the next commands:
 ```
 npm start
 ```
